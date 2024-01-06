@@ -10,16 +10,16 @@
                         <div class="row align-items-center slider-animated-1">
                             <div class="col-lg-5 col-md-6">
                                 <div class="hero-slider-content-2">
-                                    <h4 class="animated">Trade-in offer</h4>
-                                    <h2 class="animated fw-900">Supper value deals</h2>
-                                    <h1 class="animated fw-900 text-brand">On all products</h1>
-                                    <p class="animated">Save more with coupons & up to 70% off</p>
-                                    <a class="animated btn btn-brush btn-brush-3" href="product-details.html"> Shop Now </a>
+                                    <h4 class="animated">Rent Smart</h4>
+                                    <h3 class="animated fw-900">Endless Possibilities</h3>
+                                    <h2 class="animated fw-900 text-brand">Explore the world<br> of tech</h2>
+                                    <p class="animated">Rent the latest electronics hassle-free</p>
+                                    <a class="animated btn btn-brush btn-brush-3" href="product-details.html"> Discover Now </a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="single-slider-img single-slider-img-1">
-                                    <img class="animated slider-1-1" src="assets/imgs/slider/slider-1.png" alt="">
+                                    <img class="animated slider-1-1" src="assets/imgs/slider/slider-1.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -30,16 +30,16 @@
                         <div class="row align-items-center slider-animated-1">
                             <div class="col-lg-5 col-md-6">
                                 <div class="hero-slider-content-2">
-                                    <h4 class="animated">Hot promotions</h4>
-                                    <h2 class="animated fw-900">Fashion Trending</h2>
-                                    <h1 class="animated fw-900 text-7">Great Collection</h1>
-                                    <p class="animated">Save more with coupons & up to 20% off</p>
+                                    <h4 class="animated">New Arrivals</h4>
+                                    <h2 class="animated fw-900">Endless Options</h2>
+                                    <h1 class="animated fw-900 text-7">Check out!</h1>
+                                    <p class="animated">From cutting-edge cameras to gaming consoles, find what you need for your next adventure.</p>
                                     <a class="animated btn btn-brush btn-brush-2" href="product-details.html"> Discover Now </a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="single-slider-img single-slider-img-1">
-                                    <img class="animated slider-1-2" src="assets/imgs/slider/slider-2.png" alt="">
+                                    <img class="animated slider-1-2" src="assets/imgs/slider/slider-2.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -54,13 +54,13 @@
                     <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
                         <div class="banner-features wow fadeIn animated hover-up">
                             <img src="assets/imgs/theme/icons/feature-1.png" alt="">
-                            <h4 class="bg-1">Free Shipping</h4>
+                            <h4 class="bg-1">Save Time</h4>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
                         <div class="banner-features wow fadeIn animated hover-up">
                             <img src="assets/imgs/theme/icons/feature-2.png" alt="">
-                            <h4 class="bg-3">Online Order</h4>
+                            <h4 class="bg-3">Order Online</h4>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
@@ -78,7 +78,7 @@
                     <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
                         <div class="banner-features wow fadeIn animated hover-up">
                             <img src="assets/imgs/theme/icons/feature-5.png" alt="">
-                            <h4 class="bg-5">Happy Sell</h4>
+                            <h4 class="bg-5">Sustainable</h4>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
@@ -102,7 +102,7 @@
                             <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="tab-two" aria-selected="false">Popular</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">New added</button>
+                            <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">Recently added</button>
                         </li>
                     </ul>
                     <a href="#" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
@@ -126,25 +126,25 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">Hot</span>
+                                            <span class="new">New</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Clothing</a>
+                                            <a href="shop.html">Cameras</a>
                                         </div>
-                                        <h2><a href="product-details.html">Colorful Pattern Shirts</a></h2>
+                                        <h2><a href="product-details.html">Canon EOS 5D</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>90%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$238.85 </span>
-                                            <span class="old-price">$245.8</span>
+                                            <span>LKR 4000/hr</span>
+                                            <span class="old-price">LKR 4500/hr</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -164,25 +164,25 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="new">New</span>
+                                            <!--span class="new">New</span-->
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Clothing</a>
+                                            <a href="shop.html">Speakers</a>
                                         </div>
-                                        <h2><a href="product-details.html">Plain Color Pocket Shirts</a></h2>
+                                        <h2><a href="product-details.html">Sony SRS-XB13</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>50%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$138.85 </span>
-                                            <span class="old-price">$255.8</span>
+                                            <span>LKR 1000/hr </span>
+                                            <!--span class="old-price">LKR 2500/hr</span-->
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -202,25 +202,25 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="best">Best Sell</span>
+                                            <span class="best">Best Rent</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Shirts</a>
+                                            <a href="shop.html">Printers</a>
                                         </div>
-                                        <h2><a href="product-details.html">Vintage Floral Oil Shirts</a></h2>
+                                        <h2><a href="product-details.html">BenQ Laser Printer</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>95%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$338.85 </span>
-                                            <span class="old-price">$445.8</span>
+                                            <span>LKR 1500/hr</span>
+                                            <span class="old-price">LKR 1800/hr</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -240,25 +240,25 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="sale">Sale</span>
+                                            <span class="new">New</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Clothing</a>
+                                            <a href="shop.html">Speakers</a>
                                         </div>
-                                        <h2><a href="product-details.html">Colorful Hawaiian Shirts</a></h2>
+                                        <h2><a href="product-details.html">JBL PartyBox</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$123.85 </span>
-                                            <span class="old-price">$235.8</span>
+                                            <span>LKR 3000/hr </span>
+                                            <!--span class="old-price">$235.8</span-->
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -283,20 +283,20 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Shirt</a>
+                                            <a href="shop.html">Gaming Consoles</a>
                                         </div>
-                                        <h2><a href="product-details.html">Flowers Sleeve Lapel Shirt</a></h2>
+                                        <h2><a href="product-details.html">PlayStation 5 Slim</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$28.85 </span>
-                                            <span class="old-price">$45.8</span>
+                                            <span>LKR 5000/hr </span>
+                                            <span class="old-price">LKR 6500/hr</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -321,20 +321,20 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Shirts</a>
+                                            <a href="shop.html">Headphones</a>
                                         </div>
-                                        <h2><a href="product-details.html">Ethnic Floral Casual Shirts</a></h2>
+                                        <h2><a href="product-details.html">Sony WH-CH71ON</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$238.85 </span>
-                                            <span class="old-price">$245.8</span>
+                                            <span>LKR 1500/hr </span>
+                                            <span class="old-price">LKR 2000/hr</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -359,19 +359,19 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Shoes</a>
+                                            <a href="shop.html">Cameras</a>
                                         </div>
-                                        <h2><a href="product-details.html">Stitching Hole Sandals</a></h2>
+                                        <h2><a href="product-details.html">GOPRO HERO 10</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>98%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$1275.85 </span>
+                                            <span>LKR 3000/hr </span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -393,20 +393,20 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Shirt</a>
+                                            <a href="shop.html">Printers</a>
                                         </div>
-                                        <h2><a href="product-details.html">Mens Porcelain Shirt</a></h2>
+                                        <h2><a href="product-details.html">HP Laser M507-dn</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>$238.85 </span>
-                                            <span class="old-price">$245.8</span>
+                                            <span>LKR 2000/hr </span>
+                                            <span class="old-price">LKR 2500/hr</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -508,7 +508,7 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="best">Best Sell</span>
+                                            <span class="best">Best Rent</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
@@ -766,7 +766,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-3-1.jpg" alt="">
+                                                <img class="hover-img" src="assets/imgs/shop/product-3-1.jpg" alt="" height="360px">
                                                 <img class="default-img" src="assets/imgs/shop/product-3-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -814,7 +814,7 @@
                                             <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="best">Best Sell</span>
+                                            <span class="best">Best Rent</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
@@ -1034,11 +1034,11 @@
         <section class="banner-2 section-padding pb-0">
             <div class="container">
                 <div class="banner-img banner-big wow fadeIn animated f-none">
-                    <img src="assets/imgs/banner/banner-4.png" alt="">
+                    <img src="assets/imgs/banner/banner-4-1.jpg" alt="">
                     <div class="banner-text d-md-block d-none">
-                        <h4 class="mb-15 mt-40 text-brand">Repair Services</h4>
-                        <h1 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h1>
-                        <a href="shop.html" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a>
+                        <h1 class="fw-600 mb-20">Capture Every Moment in Clarity</h1>
+                        <h3 class="fw-600 mb-20">Rent high-quality cameras <br> for breathtaking photos and videos</h3>
+                        <a href="shop.html" class="btn">Discover Now <i class="fi-rs-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1053,55 +1053,55 @@
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-1.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">T-Shirt</a></h5>
+                            <h5><a href="shop.html">Projectors</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"> <img src="assets/imgs/shop/category-thumb-2.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Bags</a></h5>
+                            <h5><a href="shop.html">Headphones</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-3.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Sandan</a></h5>
+                            <h5><a href="shop.html">Speakers</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-4.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Scarf Cap</a></h5>
+                            <h5><a href="shop.html">Cameras</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-5.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Shoes</a></h5>
+                            <h5><a href="shop.html">Printers</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-6.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Pillowcase</a></h5>
+                            <h5><a href="shop.html">VR Headsets</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-7.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Jumpsuits</a></h5>
+                            <h5><a href="shop.html">Smart Watches</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="assets/imgs/shop/category-thumb-8.jpg" alt=""></a>
                             </figure>
-                            <h5><a href="shop.html">Hats</a></h5>
+                            <h5><a href="shop.html">Gaming Consoles</a></h5>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="banners mb-15">
+        <!--section class="banners mb-15">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
@@ -1136,7 +1136,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section-->
         <section class="section-padding">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
@@ -1162,14 +1162,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Lorem ipsum dolor</a></h2>
+                                <h2><a href="product-details.html">Sony SRS-XB13</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$238.85 </span>
-                                    <span class="old-price">$245.8</span>
+                                    <span>LKR 1000/hr </span>
+                                    <!--span class="old-price">$245.8</span-->
                                 </div>
                             </div>
                         </div>
@@ -1193,14 +1193,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Aliquam posuere</a></h2>
+                                <h2><a href="product-details.html">JBL PartyBox</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$173.85 </span>
-                                    <span class="old-price">$185.8</span>
+                                    <span>LKR 3000/hr</span>
+                                    <!--span class="old-price">$185.8</span-->
                                 </div>
                             </div>
                         </div>
@@ -1209,8 +1209,8 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="">
+                                        <img class="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1224,14 +1224,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Sed dapibus orci</a></h2>
+                                <h2><a href="product-details.html">Canon EOS 5D</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$215.85 </span>
-                                    <span class="old-price">$235.8</span>
+                                    <span>LKR 4000/hr </span>
+                                    <!--span class="old-price">LKR 4500/hr</span-->
                                 </div>
                             </div>
                         </div>
@@ -1255,14 +1255,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Donec congue</a></h2>
+                                <h2><a href="product-details.html">BenQ Laser Printer</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$83.8 </span>
-                                    <span class="old-price">$125.2</span>
+                                    <span>LKR 1500/hr </span>
+                                    <!--span class="old-price">$125.2</span-->
                                 </div>
                             </div>
                         </div>
@@ -1271,8 +1271,8 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="">
+                                        <img class="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1286,14 +1286,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Curabitur porta</a></h2>
+                                <h2><a href="product-details.html">Sony WH-CH71ON</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$1238.85 </span>
-                                    <span class="old-price">$1245.8</span>
+                                    <span>LKR 1500/hr </span>
+                                    <!--span class="old-price">$1245.8</span-->
                                 </div>
                             </div>
                         </div>
@@ -1317,14 +1317,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Praesent maximus</a></h2>
+                                <h2><a href="product-details.html">GOPRO HERO 10</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$123 </span>
-                                    <span class="old-price">$156</span>
+                                    <span>LKR 3000/hr</span>
+                                    <!--span class="old-price">$156</span-->
                                 </div>
                             </div>
                         </div>
@@ -1333,8 +1333,8 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="">
+                                        <img class="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1345,14 +1345,14 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <h2><a href="product-details.html">Vestibulum ante</a></h2>
+                                <h2><a href="product-details.html">HP Laser M507-dn</a></h2>
                                 <div class="rating-result" title="90%">
                                     <span>
                                     </span>
                                 </div>
                                 <div class="product-price">
-                                    <span>$238.85 </span>
-                                    <span class="old-price">$245.8</span>
+                                    <span>LKR 2000/hr</span>
+                                    <!--span class="old-price">$245.8</span-->
                                 </div>
                             </div>
                         </div>
@@ -1362,14 +1362,14 @@
             </div>
         </section>
        
-        <section class="section-padding">
+        <!--section class="section-padding">
             <div class="container">
                 <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
                 <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-3-arrows"></div>
                     <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="" >
                         </div>
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/brand-2.png" alt="">
@@ -1392,7 +1392,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section-->
         
     <!--/main-->
 

@@ -26,12 +26,12 @@
                         <div class="header-info">
                         <ul>
                                 <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
-                                    <ul class="language-dropdown">
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <!--i class="fi-rs-angle-small-down"></i--></a>
+                                    <!--ul class="language-dropdown">
                                         <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-fr.png') }}" alt="">Français</a></li>
                                         <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-dt.png') }}" alt="">Deutsch</a></li>
                                         <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-ru.png') }}" alt="">Pусский</a></li>
-                                    </ul>
+                                    </ul-->
                                 </li>                                
                             </ul>
                         </div>
@@ -40,19 +40,34 @@
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great devices up to 50% off <a href="shop.html">View details</a></li>
+                                    <li>Rent devices up to 50% off <a href="shop.html">View details</a></li>
                                     <li>Supper Value Deals - Save more with coupons</li>
-                                    <li>Trendy 25silver jewelry, save up 35% off today <a href="shop.html">Shop now</a></li>
+                                    <!--li>Trendy 25silver jewelry, save up 35% off today <a href="shop.html">Shop now</a></li-->
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
-                            <ul>                                
+                            <ul>                          
+                                @guest
                                 <li><i class="fi-rs-key"></i><a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>  / 
                                 <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a></li>
-                            </ul>
+                                @endguest      
+                                @auth
+                                    {{ Auth::user()->name }}
+
+                                     <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}" x-data>
+                                @csrf
+
+                                <x-dropdown-link href="{{ route('logout') }}"
+                                         @click.prevent="$root.submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
+                                @endauth
+                              </ul>
                         </div>
                     </div>
                 </div>
@@ -62,7 +77,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <!--a href="index.html"--><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
+                    <a href="/"><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-1">
@@ -131,7 +146,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                         <!--a href="index.html"--><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
+                         <a href="/"><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -318,10 +333,10 @@
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li><a class="active" href="index.html">Home </a></li>
+                                    <li><a class="active" href="/">Home </a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="shop.html">Shop</a></li>
-                                    <li class="position-static"><a href="#">Our Collections <i class="fi-rs-angle-down"></i></a>
+                                    <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
                                         <ul class="mega-menu">
                                             <li class="sub-mega-menu sub-mega-menu-width-22">
                                                 <a class="menu-title" href="#">Women's Fashion</a>
@@ -378,7 +393,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Blog </a></li>                                    
+                                    <li><a href="blog.html">Become a Seller </a></li>                                    
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
@@ -396,7 +411,7 @@
                         </div>
                     </div>
                     <div class="hotline d-none d-lg-block">
-                        <p><i class="fi-rs-smartphone"></i><span>Toll Free</span> (+1) 0000-000-000 </p>
+                        <p><i class="fi-rs-smartphone"></i><span>Hotline</span> +94 11 2122 356 </p>
                     </div>
                     <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%</p>
                     <div class="header-action-right d-block d-lg-none">
@@ -467,7 +482,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                     <!--a href="index.html"--><img src="assets/imgs/logo/logo2.png" alt="logo"></a>
+                <a href="/"><img src="assets/imgs/logo/logo2.png" alt="logo"></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -507,7 +522,7 @@
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="index.html">Home</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop.html">shop</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our Collections</a>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Categories</a>
                                 <ul class="dropdown">
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Women's Fashion</a>
                                         <ul class="dropdown">
@@ -584,7 +599,7 @@
                         <div class="row align-items-center">
                             <div class="col flex-horizontal-center">
                                 <img class="icon-email" src="{{ asset('assets/imgs/theme/icons/icon-email.svg') }}" alt="">
-                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up </h4>
                             </div>
                             <div class="col my-4 my-md-0 des">
                                 <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>Rs.1000 coupon for your first order</strong></h5>
@@ -608,7 +623,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="widget-about font-md mb-md-5 mb-lg-0">
                             <div class="logo logo-width-1 wow fadeIn animated">
-                                <!--a href="index.html"--><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
+                            <a href="/"><img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="logo"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
                             <p class="wow fadeIn animated">
