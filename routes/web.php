@@ -74,4 +74,4 @@ Route::middleware([
 
 
 
-Route::get('/',[HomeController::class,'index'])->name('app.index');
+Route::get('/',[HomeController::class,'index'])->name('home');

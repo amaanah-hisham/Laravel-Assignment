@@ -57,8 +57,9 @@
                                 <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a></li>
                                 @endguest      
                                 @auth
+                                <a href="/user/profile">
                                     {{ Auth::user()->name }}
-
+                                    </a>
                                      <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
