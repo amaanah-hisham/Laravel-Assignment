@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 @stack('styles')
+<!-- Styles -->
+@livewireStyles
 </head>
 
 <body>
@@ -334,7 +336,7 @@
                             <nav>
                                 <ul>
                                     <li><a class="active" href="/">Home </a></li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
                                     <li><a href="shop.html">Shop</a></li>
                                     <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
                                         <ul class="mega-menu">
@@ -728,6 +730,8 @@
 <script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
 
 @stack('scripts')
+
+@livewireScripts
 </body>
 
 </html>

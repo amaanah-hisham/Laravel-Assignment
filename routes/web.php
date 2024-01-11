@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AppController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,9 +44,11 @@ Route::middleware([
 
 */
 
-Route::get('/', function (Request $request) {
-    return view('index');
-});
+
+Route::get('/about-us', function (Request $request) {
+    return view('about');
+})->name('about');
+
 
 Route::post('/post-test', function (Request $request) {
     dd(request());
@@ -72,4 +74,4 @@ Route::middleware([
 
 
 
-Route::get('/',[AppController::class,'index'])->name('app.index');
+Route::get('/',[HomeController::class,'index'])->name('app.index');
