@@ -95,18 +95,22 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('Manage Users') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                            <x-dropdown-link href="{{ route('user.index') }}">
+                                {{ __('Users') }}
                             </x-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-dropdown-link>
-                            @endif
+                        
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Manage Products') }}
+                            </div>
+
+                            <x-dropdown-link href="">
+                                {{ __('Categories') }}
+                            </x-dropdown-link>
+
 
                             <div class="border-t border-gray-200"></div>
 
