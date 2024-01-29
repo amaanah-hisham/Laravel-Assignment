@@ -72,6 +72,11 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource(
+        'product-category',
+        \App\Http\Controllers\ProductCategoryController::class
+    );
+
+    Route::resource(
         'user',
         \App\Http\Controllers\UserController::class
     
