@@ -35,7 +35,7 @@ class ProductCategoryController extends Controller
     {
         (new ProductCategory())->create($request->all());
 
-        return redirect()->route('product-category.index')->with('success', 'User successfully created!');
+        return redirect()->route('product-category.index')->with('success', 'Product Category successfully created!');
     }
 
     /**
@@ -71,6 +71,6 @@ class ProductCategoryController extends Controller
 
        
 
-        return redirect()->route('product-category.index')->with('success', 'Category successfully deleted!');
+        return redirect()->route('product-category.index')->with('success', 'Product Category successfully deleted!');
     }
 }
