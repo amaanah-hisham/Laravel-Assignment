@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="slider-arrow hero-slider-1-arrow"></div>
         </section>
@@ -178,7 +178,7 @@
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>LKR 1000/hr </span>
+                                            <span>LKR 2500/hr </span>
                                             <!--span class="old-price">LKR 2500/hr</span-->
                                         </div>
                                         <div class="product-action-1 show">
@@ -993,8 +993,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-9-1.jpg" alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-9-2.jpg" alt="">
+                                                <img class="hover-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
+                                                <img class="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -1139,7 +1139,7 @@
         </section-->
         <section class="section-padding">
             <div class="container wow fadeIn animated">
-                <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
+                <h3 class="section-title mb-20"><span>Newly</span> Added</h3>
                 <div class="carausel-6-columns-cover position-relative">
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
                     <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
@@ -1361,7 +1361,7 @@
                 </div>
             </div>
         </section>
-       
+
         <!--section class="section-padding">
             <div class="container">
                 <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
@@ -1393,7 +1393,7 @@
                 </div>
             </div>
         </section-->
-        
+
     <!--/main-->
 
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 
 */
+
+Route::get('/',[HomeController::class,'index'])->name('home');
+
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -44,7 +48,6 @@ Route::middleware([
 
 */
 
-
 Route::get('/about-us', function (Request $request) {
     return view('about');
 })->name('about');
@@ -53,6 +56,9 @@ Route::get('/about-us', function (Request $request) {
 Route::post('/post-test', function (Request $request) {
     dd(request());
 });
+
+Route::get('rentee-registration', [UserController::class, 'renteeRegistrationForm'])->name('rentee-registration');
+Route::post('rentee-registration', [UserController::class, 'renteeRegistration'])->name('rentee-registration.post');
 
 //Route::get('hello', function () {
 //    return view('hello', [
@@ -79,7 +85,7 @@ Route::middleware([
     Route::resource(
         'user',
         \App\Http\Controllers\UserController::class
-    
+
     );
 
 
@@ -88,4 +94,4 @@ Route::middleware([
 
 
 
-Route::get('/',[HomeController::class,'index'])->name('home');
+

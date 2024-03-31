@@ -13,9 +13,43 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::paginate(10);
+        //dd($users);
+
         return view('admin.user.index', [
-            'users' => User::paginate(10)
+            'users' => $users
         ]);
+
+    }
+
+    public function renteeRegistrationForm()
+    {
+        return view('rentee-registration');
+
+    }
+
+    public function renteeRegistration(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'role' => 'required'
+        ]);
+
+        $validated['role'] = 8;
+        $validated['password'] = bcrypt('password');
+
+//        User::create($validated);
+
+//        User::create([
+//            'name' => $validated['name'],
+//            'email' => $validated['email'],
+//            'role' => $validated['role'],
+//            'password' => $validated['password']
+//
+//        ])
+
+        return redirect()->route('user.index')->with('success', 'User successfully created!');
     }
 
     /**
@@ -80,7 +114,7 @@ class UserController extends Controller
         $user->update($validated);
 
         return redirect()->route('user.index')->with('success', 'User successfully updated!');
-        
+
     }
 
     /**

@@ -34,7 +34,7 @@
                                         <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-dt.png') }}" alt="">Deutsch</a></li>
                                         <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-ru.png') }}" alt="">Pусский</a></li>
                                     </ul-->
-                                </li>                                
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -51,11 +51,11 @@
                     </div>
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
-                            <ul>                          
+                            <ul>
                                 @guest
-                                <li><i class="fi-rs-key"></i><a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>  / 
+                                <li><i class="fi-rs-key"></i><a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>  /
                                 <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a></li>
-                                @endguest      
+                                @endguest
                                 @auth
                                 <a href="/user/profile">
                                     {{ Auth::user()->name }}
@@ -84,7 +84,7 @@
                     </div>
                     <div class="header-right">
                         <div class="search-style-1">
-                            <form action="#">                                
+                            <form action="#">
                                 <input type="text" placeholder="Search for items...">
                             </form>
                         </div>
@@ -159,7 +159,7 @@
                             <div class="categori-dropdown-wrap categori-dropdown-active-large">
                                 <ul>
                                     <li class="has-children">
-                                        <a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's Clothing</a>
+                                        <a href="shop.html"><i class="surfsidemedia-font-dress"></i>Cameras</a>
                                         <div class="dropdown-menu">
                                             <ul class="mega-menu d-lg-flex">
                                                 <li class="mega-menu-col col-lg-7">
@@ -214,7 +214,7 @@
                                         </div>
                                     </li>
                                     <li class="has-children">
-                                        <a href="shop.html"><i class="surfsidemedia-font-tshirt"></i>Men's Clothing</a>
+                                        <a href="shop.html"><i class="surfsidemedia-font-tshirt"></i>Laptops</a>
                                         <div class="dropdown-menu">
                                             <ul class="mega-menu d-lg-flex">
                                                 <li class="mega-menu-col col-lg-7">
@@ -260,7 +260,7 @@
                                         </div>
                                     </li>
                                     <li class="has-children">
-                                        <a href="shop.html"><i class="surfsidemedia-font-smartphone"></i> Cellphones</a>
+                                        <a href="shop.html"><i class="surfsidemedia-font-smartphone"></i>Projectors</a>
                                         <div class="dropdown-menu">
                                             <ul class="mega-menu d-lg-flex">
                                                 <li class="mega-menu-col col-lg-7">
@@ -314,19 +314,19 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Computer & Office</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Consumer Electronics</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-diamond"></i>Jewelry & Accessories</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Home & Garden</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-high-heels"></i>Shoes</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-teddy-bear"></i>Mother & Kids</a></li>
-                                    <li><a href="shop.html"><i class="surfsidemedia-font-kite"></i>Outdoor fun</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Gaming Consoles</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Lights</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-diamond"></i>Smart Watches</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Printers</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-high-heels"></i>Speakers</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-teddy-bear"></i>Earphones</a></li>
+                                    <li><a href="shop.html"><i class="surfsidemedia-font-kite"></i>Headsets</a></li>
                                     <li>
                                         <ul class="more_slide_open" style="display: none;">
-                                            <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Beauty, Health</a></li>
-                                            <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Bags and Shoes</a></li>
+                                            <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Smartphones</a></li>
+                                            <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Gadgets</a></li>
                                             <li><a href="shop.html"><i class="surfsidemedia-font-diamond"></i>Consumer Electronics</a></li>
-                                            <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Automobiles & Motorcycles</a></li>
+                                            <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Automobiles</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -396,7 +396,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Become a Seller </a></li>                                    
+                                    <li><a href="{{route('rentee-registration')}}">Become a Rentee </a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
@@ -406,7 +406,7 @@
                                             <li><a href="#">Coupons</a></li>
                                             <li><a href="#">Orders</a></li>
                                             <li><a href="#">Customers</a></li>
-                                            <li><a href="#">Logout</a></li>                                            
+                                            <li><a href="#">Logout</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -571,9 +571,9 @@
                         <a href="contact.html"> Our location </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="login.html">Log In </a>                        
+                        <a href="login.html">Log In </a>
                     </div>
-                    <div class="single-mobile-header-info">                        
+                    <div class="single-mobile-header-info">
                         <a href="register.html">Sign Up</a>
                     </div>
                     <div class="single-mobile-header-info">
@@ -590,8 +590,8 @@
                 </div>
             </div>
         </div>
-    </div>        
-  
+    </div>
+
 @yield('content')
 
     <footer class="main">
@@ -655,7 +655,7 @@
                             <li><a href="#">Delivery Information</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>                            
+                            <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2  col-md-3">
@@ -664,7 +664,7 @@
                             <li><a href="my-account.html">My Account</a></li>
                             <li><a href="#">View Cart</a></li>
                             <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Track My Order</a></li>                            
+                            <li><a href="#">Track My Order</a></li>
                             <li><a href="#">Order</a></li>
                         </ul>
                     </div>
@@ -704,7 +704,7 @@
                 </div>
             </div>
         </div>
-    </footer>    
+    </footer>
     <!-- Vendor JS-->
 <script src="{{ asset('assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
