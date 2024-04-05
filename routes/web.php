@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductSubCategoryController;
+use App\Http\Controllers\ProductTestSubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,10 @@ use App\Http\Controllers\UserController;
 |
 
 */
+Route::middleware([])->group(function(){
+    Route::get('/',[HomeController::class,'index'])->name('home');
+});
 
-Route::get('/',[HomeController::class,'index'])->name('home');
 
 /*
 Route::get('/', function () {
@@ -57,8 +61,10 @@ Route::post('/post-test', function (Request $request) {
     dd(request());
 });
 
-Route::get('rentee-registration', [UserController::class, 'renteeRegistrationForm'])->name('rentee-registration');
-Route::post('rentee-registration', [UserController::class, 'renteeRegistration'])->name('rentee-registration.post');
+
+//For the Renter registration form
+Route::get('renter-registration', [UserController::class, 'renterRegistrationForm'])->name('renter-registration');
+Route::post('renter-registration', [UserController::class, 'renterRegistration'])->name('renter-registration.post');
 
 //Route::get('hello', function () {
 //    return view('hello', [
@@ -67,6 +73,17 @@ Route::post('rentee-registration', [UserController::class, 'renteeRegistration']
 //        'address' => 'Hà Nội'
 //    ]);
 //});
+
+Route::group(['middleware' => ['role:Admin']],function(){
+    Route::get('product-sub-categories/create',[ProductTestSubCategoryController::class, 'viewSubCategoryForm'])->name('product-sub-categories.create');
+    Route::post('product-sub-categories/create',[ProductTestSubCategoryController::class, 'storeSubCategory'])->name('product-sub-categories.store');
+});
+
+
+//to call the product details page
+Route::get('/products', function (Request $request) {
+    return view('product-details');
+})->name('product-details');
 
 Route::middleware([
     'auth:sanctum',
@@ -82,6 +99,8 @@ Route::middleware([
         \App\Http\Controllers\ProductCategoryController::class
     );
 
+
+
     Route::resource(
         'user',
         \App\Http\Controllers\UserController::class
@@ -91,6 +110,8 @@ Route::middleware([
 
 
 });
+
+
 
 
 

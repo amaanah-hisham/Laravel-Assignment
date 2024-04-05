@@ -338,7 +338,9 @@
                                 <ul>
                                     <li><a class="active" href="/">Home </a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="{{ route('product-details') }}">Shop</a>
+
+                                    </li>
                                     <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
                                         <ul class="mega-menu">
                                             <li class="sub-mega-menu sub-mega-menu-width-22">
@@ -396,7 +398,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('rentee-registration')}}">Become a Rentee </a></li>
+                                    <li><a href="{{route('renter-registration')}}">Become a Renter </a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">

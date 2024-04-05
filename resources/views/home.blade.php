@@ -129,6 +129,7 @@
                                             <span class="new">New</span>
                                         </div>
                                     </div>
+                                    <!--Featured products-->
                                     <div class="product-content-wrap">
                                         <div class="product-category">
                                             <a href="shop.html">Cameras</a>

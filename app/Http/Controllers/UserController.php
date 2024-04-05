@@ -22,34 +22,31 @@ class UserController extends Controller
 
     }
 
-    public function renteeRegistrationForm()
+    public function renterRegistrationForm()
     {
-        return view('rentee-registration');
+        return view('renter-registration');
 
     }
 
-    public function renteeRegistration(Request $request)
+    public function renterRegistration(Request $request)
     {
+
+//        dd($request->all());
+
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'role' => 'required'
+            'password' => 'required|string|min:8|confirmed',
+            'checkbox' => 'required|string',
         ]);
 
-        $validated['role'] = 8;
+//        $validated['role'] = 8;
         $validated['password'] = bcrypt('password');
 
-//        User::create($validated);
+        $user = User::create($validated);
+        $user->assignRole('Renter');
 
-//        User::create([
-//            'name' => $validated['name'],
-//            'email' => $validated['email'],
-//            'role' => $validated['role'],
-//            'password' => $validated['password']
-//
-//        ])
-
-        return redirect()->route('user.index')->with('success', 'User successfully created!');
+        return redirect()->route('user.index')->with('success', 'Renter User successfully created!');
     }
 
     /**

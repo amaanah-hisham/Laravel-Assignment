@@ -20,7 +20,7 @@
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Create an Account</h3>
                                         </div>
-                                        <form method="post" action="{{route('rentee-registration.post')}}">
+                                        <form method="post" action="{{route('renter-registration.post')}}">
 
                                             @csrf
 

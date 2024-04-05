@@ -21,7 +21,7 @@ class ProductCategorySeeder extends Seeder
             "Computer Accessories" => array("Keyboards", "Mice", "Monitors", "External Hard Drives", "Webcams"),
             "Projectors" => array("HD Projectors", "4K Projectors", "Portable Projectors", "Home Theater Projectors", "Business Projectors"),
             "Other Rental Devices" => array("Audio/Visual Equipment", "Event Lighting", "Sound Systems", "Photography Equipment", "Virtual Reality Sets"),
-           
+
         );
 
         foreach ($itemCategories as $categoryName => $items) {
@@ -31,10 +31,10 @@ class ProductCategorySeeder extends Seeder
             ]);
 
             foreach ($items as $itemName) {
-                \App\Models\ProductCategory::create([
+                \App\Models\ProductSubCategory::create([
                     'name' => $itemName,
                     'slug' => \Illuminate\Support\Str::slug($itemName),
-                    'parent_id' => $category->id,
+                    'category_id' => $category->id,
                 ]);
             }
         }

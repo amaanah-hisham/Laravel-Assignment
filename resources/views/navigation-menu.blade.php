@@ -70,9 +70,10 @@
                         </x-dropdown>
                     </div>
                 @endif
-             @auth   
+             @auth
                 <!-- Settings Dropdown -->
-                
+
+                @role('Admin')
                 <div class="ms-3 relative">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -100,13 +101,17 @@
                                 {{ __('Users') }}
                             </x-dropdown-link>
 
-                        
+
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Products') }}
                             </div>
 
                             <x-dropdown-link href="{{  route('product-category.index') }}">
                                 {{ __('Categories') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link href="{{  route('product-sub-categories.create') }}">
+                                {{ __('Sub Categories') }}
                             </x-dropdown-link>
 
 
@@ -124,6 +129,7 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
+                @endrole
 
                 <div class="ms-3 relative">
                     <x-dropdown align="right" width="48">
@@ -178,7 +184,7 @@
                     </x-dropdown>
                 </div>
             </div>
-            
+
 @endauth
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">

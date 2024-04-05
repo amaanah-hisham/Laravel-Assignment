@@ -9,7 +9,7 @@ enum Role: int {
     case MarketingManager = 4;
     case SalesManager = 5;
     case RentalProcessManager = 6;
-    case Rentee = 7;
-    case Renter = 8;
+    case Renter = 7;
+    case Rentee = 8;
 
 }
