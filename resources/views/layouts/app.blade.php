@@ -12,34 +12,53 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+{{--        @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+        <link rel="stylesheet" href="{{ asset('assets/css/vendors/bootstrap.min.css') }}">
+
 
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
-        <x-banner />
+    <body class=" bg-light">
 
-        <div class="min-h-screen bg-gray-100">
+
+
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="d-flex py-3 bg-white shadow-sm border-bottom">
+                    <div class="container">
                         {{ $header }}
                     </div>
                 </header>
+
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="container my-5">
                 {{ $slot }}
+
+
             </main>
-        </div>
+
+
+          @if(request()->route()->getName() !== 'product.edit' && request()->route()->getName() !== 'product.create' && request()->route()->getName() !== 'dashboard')
+            <script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}" defer/>
+          @elseif(request()->route()->getName() === 'product.create')
+
+
+          @endif
+
+
+            @livewireScripts
+
+            <script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}"/>
+
+
 
         @stack('modals')
 
-        @livewireScripts
+
     </body>
 </html>

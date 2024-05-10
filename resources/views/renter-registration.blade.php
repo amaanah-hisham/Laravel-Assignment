@@ -1,4 +1,7 @@
 @extends('layouts.base')
+
+@section('title', 'Renter Registration')
+
 @section('content')
     <main class="main">
         <div class="page-header breadcrumb-wrap">

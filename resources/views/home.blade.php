@@ -1,6 +1,17 @@
 @extends('layouts.base')
+
+@section('title', 'Homepage')
+
 @section('content')
 
+
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            {{ session()->get('success') }}
+        </div>
+
+    @endif
 
 <!--main class="main"-->
         <section class="home-slider position-relative pt-50">
@@ -105,313 +116,62 @@
                             <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">Recently added</button>
                         </li>
                     </ul>
-                    <a href="#" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
+                    <a href="{{ route('shop') }}" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
                 </div>
                 <!--End nav-tabs-->
                 <div class="tab-content wow fadeIn animated" id="myTabContent">
                     <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div class="row product-grid-4">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="">
-                                            </a>
+                            @forelse($products as $product)
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 ">
+                                    <div class="product-cart-wrap mb-30">
+                                        <div class="product-img-action-wrap h-100">
+                                            <div class="product-img product-img-zoom">
+                                                <a
+                                                    href="{{ route('product-details', ['category' => $product->productCategory->slug, 'sub_category' => $product->productSubCategory->name ,'slug' => $product->slug]) }}">
+                                                    <img class="default-img img-fluid" src="{{ asset('storage/' . $product->product_image) }}" alt="">
+                                                </a> <!--to set the url parameters-->
+
+                                            </div>
+
+                                            <div class="product-badges product-badges-position product-badges-mrg">
+                                                <span class="new">New</span>
+                                            </div>
                                         </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="new">New</span>
-                                        </div>
-                                    </div>
-                                    <!--Featured products-->
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Cameras</a>
-                                        </div>
-                                        <h2><a href="product-details.html">Canon EOS 5D</a></h2>
-                                        <div class="rating-result" title="90%">
+                                        <!--Featured products-->
+                                        <div class="product-content-wrap">
+                                            <div class="product-category">
+                                                <a href="shop.html">{{ $product->productCategory->name }}</a>
+                                            </div>
+                                            <h2><a href="{{ route('product-details', ['category' => $product->productCategory->slug, 'sub_category' => $product->productSubCategory->slug ,'slug' => $product->slug]) }}">{{ $product->title }}</a></h2> <!--to set the url parameters-->
+                                            <div class="rating-result" title="90%">
                                             <span>
                                                 <span>90%</span>
                                             </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 4000/hr</span>
-                                            <span class="old-price">LKR 4500/hr</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!--span class="new">New</span-->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Speakers</a>
-                                        </div>
-                                        <h2><a href="product-details.html">Sony SRS-XB13</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>50%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 2500/hr </span>
-                                            <!--span class="old-price">LKR 2500/hr</span-->
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>LKR {{ $product->price }}/hr</span>
+                                                <span class="old-price">LKR {{ $product->price + 1500 }}/hr</span>
+                                            </div>
+                                            <div class="product-action-1 show">
+                                                <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="best">Best Rent</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Printers</a>
-                                        </div>
-                                        <h2><a href="product-details.html">BenQ Laser Printer</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>95%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 1500/hr</span>
-                                            <span class="old-price">LKR 1800/hr</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="new">New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Speakers</a>
-                                        </div>
-                                        <h2><a href="product-details.html">JBL PartyBox</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>70%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 3000/hr </span>
-                                            <!--span class="old-price">$235.8</span-->
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-xs-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-30%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Gaming Consoles</a>
-                                        </div>
-                                        <h2><a href="product-details.html">PlayStation 5 Slim</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>70%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 5000/hr </span>
-                                            <span class="old-price">LKR 6500/hr</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-xs-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-22%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Headphones</a>
-                                        </div>
-                                        <h2><a href="product-details.html">Sony WH-CH71ON</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>70%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 1500/hr </span>
-                                            <span class="old-price">LKR 2000/hr</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap mb-xs-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="new">New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Cameras</a>
-                                        </div>
-                                        <h2><a href="product-details.html">GOPRO HERO 10</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>98%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 3000/hr </span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                <div class="product-cart-wrap">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">Printers</a>
-                                        </div>
-                                        <h2><a href="product-details.html">HP Laser M507-dn</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>70%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>LKR 2000/hr </span>
-                                            <span class="old-price">LKR 2500/hr</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
+
+
+
+                        </div>
+
+                        <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-start">
+                                    {{ $products->links() }}
+                                </ul>
+                            </nav>
                         </div>
                         <!--End product-grid-4-->
                     </div>

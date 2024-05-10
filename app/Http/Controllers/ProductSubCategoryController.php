@@ -25,15 +25,15 @@ class ProductSubCategoryController extends Controller
 
         $categories = ProductCategory::orderBy('id', 'DESC')->get();
 
-        return view('admin.product_sub_category.form', [
-            'categories' => $categories
-        ]);
+//        return view('admin.product_sub_category.form', [
+//            'categories' => $categories
+//        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductSubCategoryRequest $request)
+    public function store(Request $request)
     {
         dd('test');
     }

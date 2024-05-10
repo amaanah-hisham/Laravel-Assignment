@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -63,4 +64,17 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function userproducts(): HasMany
+    {
+        return $this->hasMany(Product::class, 'user_id', 'id');
+    }
+
+    public function rentedItemsAsRentee(): HasMany
+    {
+        return $this->hasMany(RentedItem::class, 'rentee_id', 'id');
+    }
+
+
+
 }

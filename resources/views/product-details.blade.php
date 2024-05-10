@@ -1,4 +1,7 @@
 @extends('layouts.base')
+
+@section('title', 'Product Details')
+
 @section('content')
 
     <main class="main">
@@ -6,8 +9,8 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Fashion
-                    <span></span> Abstract Print Patchwork Dress
+                    <span></span> {{ $product->productCategory->name }}
+                    <span></span> {{ $product->title }}
                 </div>
             </div>
         </div>
@@ -23,25 +26,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-2.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-1.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-3.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-4.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-5.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-6.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-7.jpg" alt="product image">
+                                                <img src="{{ asset('storage/' . $product->product_image) }}" alt="product image">
                                             </figure>
                                         </div>
                                         <!-- THUMBNAILS -->
@@ -60,54 +45,35 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="detail-info">
-                                        <h2 class="title-detail">Colorful Pattern Shirts HD450</h2>
-                                        <div class="product-detail-rating">
-                                            <!--div class="pro-details-brand">
-                                                <span> Brands: <a href="shop.html">Bootstrap</a></span>
-                                            </div-->
-                                            <div class="product-rate-cover text-end">
-                                                <div class="product-rate d-inline-block">
-                                                    <div class="product-rating" style="width:90%">
-                                                    </div>
-                                                </div>
-                                                <span class="font-small ml-5 text-muted"> (25 reviews)</span>
-                                            </div>
-                                        </div>
+                                        <h2 class="title-detail">{{ $product->title }}</h2>
+
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
-                                                <ins><span class="text-brand">$120.00</span></ins>
+                                                <ins><span class="text-brand">LKR {{ $product->price }}/day</span></ins>
 
                                             </div>
                                         </div>
                                         <div class="bt-1 border-color-1 mt-15 mb-15"></div>
                                         <div class="short-desc mb-30">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi? Officia doloremque facere quia. Voluptatum, accusantium!</p>
-                                        </div>
-                                        <div class="product_sort_info font-xs mb-30">
-                                            <ul>
-                                                <li class="mb-10"><i class="fi-rs-crown mr-5"></i> 1 Year AL Jazeera Brand Warranty</li>
-                                                <li class="mb-10"><i class="fi-rs-refresh mr-5"></i> 30 Day Return Policy</li>
-                                                <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
-                                            </ul>
+                                            <p>{{ $product->description }}</p>
                                         </div>
 
-                                        <div class="bt-1 border-color-1 mt-30 mb-30"></div>
-                                        <div class="detail-extralink">
-                                            <div class="detail-qty border radius">
-                                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                                <span class="qty-val">1</span>
-                                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
-                                            </div>
-                                            <div class="product-extra-link2">
-                                                <button type="submit" class="button button-add-to-cart">Rent</button>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
-                                        </div>
-                                        <ul class="product-meta font-xs color-grey mt-50">
+                                        <!-- Additional Fields for Mobile Number and NIC -->
 
-                                            <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
-                                        </ul>
+                                        @if(auth()->id() !== $product->user_id)
+                                            @livewire('rent-item', ['product_id' => $product->id])
+                                        @else
+                                            <div class="alert alert-warning" role="alert">
+                                                You cannot rent your own product.
+                                            </div>
+
+                                        @endif
+
+
+{{--                                        <ul class="product-meta font-xs color-grey mt-50">--}}
+
+{{--                                            <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>--}}
+{{--                                        </ul>--}}
                                     </div>
                                     <!-- Detail Info -->
                                 </div>
@@ -411,16 +377,18 @@
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="widget-category mb-30">
-                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
+
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">You may Also Like</h5>
                             <ul class="categories">
-                                <li><a href="shop.html">Cameras</a></li>
-                                <li><a href="shop.html">Headphones</a></li>
-                                <li><a href="shop.html">gaming Consoles</a></li>
-                                <li><a href="shop.html">Printers</a></li>
-                                <li><a href="shop.html">Speakers</a></li>
-                                <li><a href="shop.html">Projectors</a></li>
-                                <li><a href="shop.html">Lights</a></li>
+                                <li>
+                                    @forelse($similar_subcategories as $similar_subcategory)
+                                        <h5 class="style-1 mb-30  ">
+                                            <a href="#">{{ $similar_subcategory->name }}</a></h5>
+                                    @empty
+                                    @endforelse
+                                </li>
                             </ul>
+
                         </div>
 
                         <!-- Product sidebar Widget -->

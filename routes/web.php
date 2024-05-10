@@ -1,10 +1,16 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RentedItemController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductSubCategoryController;
 use App\Http\Controllers\ProductTestSubCategoryController;
+use App\Livewire\Product\Create;
+use App\Livewire\Product\Update;
+use App\Livewire\ShopFilter;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,95 +23,54 @@ use App\Http\Controllers\ProductTestSubCategoryController;
 |
 
 */
-Route::middleware([])->group(function(){
-    Route::get('/',[HomeController::class,'index'])->name('home');
-});
+
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/products/{category}/{sub_category}/{slug}', [ProductController::class, 'view'])->name('product-details');
 
-Route::get('l', function () {
-    return view('bts');
-});
-
-Route::get('welcomePPP', function () {
-    return view('welcomePage', [
-        'name' => 'Amaanah',
-        'age' => 22,
-        'address' => '43/2, Kotahena'
-    ]);
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+    Route::middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified',
+    ])->group(function () {
 
 
-*/
+Route::get('dashboard',[HomeController::class, 'viewDashboard'])->name('dashboard');
 
-Route::get('/about-us', function (Request $request) {
-    return view('about');
-})->name('about');
+Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
 
+    Route::group(['middleware' => ['role:Admin']],function() {
+        Route::get('product-sub-categories', [ProductTestSubCategoryController::class, 'showSubCategories'])->name('product-sub-categories-view');
+        Route::get('product-sub-categories/create', [ProductTestSubCategoryController::class, 'viewSubCategoryForm'])->name('product-sub-categories.create');
+        Route::post('product-sub-categories/create', [ProductTestSubCategoryController::class, 'storeSubCategory'])->name('product-sub-categories.store');
+        Route::get('product-sub-categories/edit/{slug}', [ProductTestSubCategoryController::class, 'viewEditSubCategoryForm'])->name('product-sub-categories.edit');
 
-Route::post('/post-test', function (Request $request) {
-    dd(request());
-});
+            Route::resource(
+                'product-category',
+                \App\Http\Controllers\ProductCategoryController::class
+            );
 
+            Route::resource(
+                'user',
+                \App\Http\Controllers\UserController::class
 
-//For the Renter registration form
-Route::get('renter-registration', [UserController::class, 'renterRegistrationForm'])->name('renter-registration');
-Route::post('renter-registration', [UserController::class, 'renterRegistration'])->name('renter-registration.post');
+            );
+        });
 
-//Route::get('hello', function () {
-//    return view('hello', [
-//        'name' => 'Taylor',
-//        'age' => 30,
-//        'address' => 'Hà Nội'
-//    ]);
-//});
+        //products
+        Route::get('product/create', Create::class)->name('product.create')->middleware(['role:Renter|Admin']);
+        Route::post('product/create',[ProductController::class, 'store'])->name('product.store')->middleware(['role:Renter|Admin']);
+        Route::get('edit-product/{slug}/edit', Update::class)->name('product.edit');
 
-Route::group(['middleware' => ['role:Admin']],function(){
-    Route::get('product-sub-categories/create',[ProductTestSubCategoryController::class, 'viewSubCategoryForm'])->name('product-sub-categories.create');
-    Route::post('product-sub-categories/create',[ProductTestSubCategoryController::class, 'storeSubCategory'])->name('product-sub-categories.store');
-});
+        Route::get('view-products', [ProductController::class, 'viewProducts'])->name('product.index');
+        Route::get('view-products/{slug}', [ProductController::class, 'viewProductBySlug'])->name('products.view-by-slug')->middleware(['role:Renter|Admin']);
 
-
-//to call the product details page
-Route::get('/products', function (Request $request) {
-    return view('product-details');
-})->name('product-details');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    Route::resource(
-        'product-category',
-        \App\Http\Controllers\ProductCategoryController::class
-    );
+        Route::post('view-products/{slug}/delete', [ProductController::class, 'deleteProductByID'])->name('products.delete')->middleware(['role:Renter|Admin']);
 
 
+    });
 
-    Route::resource(
-        'user',
-        \App\Http\Controllers\UserController::class
-
-    );
 
 
 

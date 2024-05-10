@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RentedItem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Enums\Role;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -41,12 +43,14 @@ class UserController extends Controller
         ]);
 
 //        $validated['role'] = 8;
-        $validated['password'] = bcrypt('password');
+        $validated['password'] = bcrypt($request->password);
 
         $user = User::create($validated);
         $user->assignRole('Renter');
 
-        return redirect()->route('user.index')->with('success', 'Renter User successfully created!');
+        Auth::login($user);
+
+        return redirect()->route('product.create')->with('success', 'You Renter account has been successfully created!');
     }
 
     /**
@@ -81,10 +85,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -123,4 +124,20 @@ class UserController extends Controller
 
         return redirect()->route('user.index')->with('success', 'User successfully deleted!');
     }
+
+//    public function show($id)
+//    {
+//        $user = User::findOrFail($id);
+//        return view('admin.user.show-users', compact('user'));
+//    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        $rented_items = RentedItem::where('rentee_id', $user->id)->paginate(5);
+        return view('admin.user.show-users', compact('user', 'rented_items'));
+    }
+
+
+
 }
