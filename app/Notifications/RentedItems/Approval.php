@@ -40,9 +40,29 @@ class Approval extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)->markdown('mail.rented-items.approval',[
-            'rentee_request' => $this->rentee_request,
-        ])->subject('Rent Request {$status}');
+
+        if ($this->status == "rented") {
+            // rented status
+
+            $url = url()->to("dashboard");
+
+            return (new MailMessage)->markdown('mail.rented-items.approval',[
+                'rented_item' => $this->rentee_request,
+                'url' => $url,
+                "status" => "rented"
+            ])->subject('Rent Request was success');
+
+        } else {
+            // rejected status
+
+            return (new MailMessage)->markdown('mail.rented-items.approval',[
+                'rented_item' => $this->rentee_request,
+                "status" => "rejected"
+            ])->subject('Rent Request was rejected');
+
+        }
+
+
     }
 
     /**

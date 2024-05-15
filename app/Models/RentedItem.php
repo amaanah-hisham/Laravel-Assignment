@@ -31,10 +31,10 @@ class RentedItem extends Model
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
-//    public function product()
-//    {
-//        return $this->hasOne(Product::class, 'id', 'product_id');
-//    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'rentee_id', 'id');
+    }
 
 
 

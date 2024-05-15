@@ -69,11 +69,6 @@
                                                 </a> <!--to set the url parameters-->
 
                                             </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
 
                                         </div>
                                         <!--Featured products-->
@@ -90,6 +85,7 @@
                                             <div class="product-price">
                                                 <span>LKR {{ $product->price }}/hr</span>
                                                 <span class="old-price">LKR {{ $product->price + 1500 }}/hr</span>
+
                                             </div>
                                             <div class="product-action-1 show">
                                                 <a aria-label="Rent" class="action-btn hover-up" href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>

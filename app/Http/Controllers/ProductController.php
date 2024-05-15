@@ -31,20 +31,48 @@ class ProductController extends Controller
 
     }
 
+//    public function viewProducts()
+//    {
+//        if (auth()->user()->hasRole('Admin')) {
+//            $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+//        } else {
+//            $products = Product::where('user_id', auth()->id)
+//                            ->orderBy('created_at', 'DESC')->paginate(10);
+//        }
+//
+//
+//        return view('admin.product.index', [
+//            'products' => $products
+//        ]);
+//    }
+
     public function viewProducts()
     {
-        if (auth()->user()->hasRole('Admin')) {
-            $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        // Check if the user is authenticated
+        if (auth()->check()) {
+            // Get the authenticated user's ID
+            $userId = auth()->id();
+
+            // Check if the authenticated user has the 'Admin' role
+            if (auth()->user()->hasRole('Admin')) {
+                // Fetch all products for admin
+                $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+            } else {
+                // Fetch products associated with the authenticated user
+                $products = Product::where('user_id', $userId)->orderBy('created_at', 'DESC')->paginate(10);
+            }
+
+            // Return the view with the products
+            return view('admin.product.index', [
+                'products' => $products
+            ]);
         } else {
-            $products = Product::where('user_id', auth()->id)
-                            ->orderBy('created_at', 'DESC')->paginate(10);
+            // Handle the case where the user is not logged in
+            // For example, redirect to the login page
+            return redirect()->route('login');
         }
-
-
-        return view('admin.product.index', [
-            'products' => $products
-        ]);
     }
+
 
 
 

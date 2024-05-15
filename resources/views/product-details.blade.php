@@ -53,6 +53,7 @@
 
                                             </div>
                                         </div>
+                                        <h5>Posted By : {{$product->productOwner->name}}</h5>
                                         <div class="bt-1 border-color-1 mt-15 mb-15"></div>
                                         <div class="short-desc mb-30">
                                             <p>{{ $product->description }}</p>

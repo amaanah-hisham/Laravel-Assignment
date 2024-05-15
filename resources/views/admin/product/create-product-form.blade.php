@@ -42,7 +42,7 @@
                                 <input class="form-control" type="file" id="formFile">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Enter Hourly Rate</label>
+                                <label for="">Enter Rate (Per Day)</label>
                                 <input type="text"  name="price" placeholder="Product Price" class="form-control">
                             </div>
 

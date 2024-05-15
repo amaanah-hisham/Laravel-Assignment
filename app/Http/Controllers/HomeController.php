@@ -35,29 +35,40 @@ class HomeController extends Controller
     {
         if (auth()->user()->hasRole('Renter')) {
 
-
             $userProducts = Product::where('user_id', auth()->id())
+                ->withCount(['rentedItem as rented_items_count' => function ($query) {
+                    $query->where('status', 'requested');
+                }])
                 ->orderBy('created_at', 'DESC')
                 ->paginate(10);
 
-            return view('dashboard', [
+            $rent_requests_count = RentedItem::where('status', 'requested')->count();
 
-                'userProducts' => $userProducts
+            $rented_items = RentedItem::where('rentee_id', auth()->id())->where('status', 'rented')->paginate(5);
+
+            return view('dashboard', [
+                'userProducts' => $userProducts,
+                'rent_requests_count' => $rent_requests_count,
+                'rented_items' => $rented_items
             ]);
         }
 
         if (auth()->user()->hasRole('Rentee')) {
 
-            $rented_items = RentedItem::where('rentee_id', auth()->id())->paginate(5);
+            $rented_items = RentedItem::where('rentee_id', auth()->id())->where('status', 'rented')->paginate(5);
+            $rent_requests = RentedItem::where('rentee_id', auth()->id())->paginate(5);
+
 
             return view('dashboard', [
-                'rented_items' => $rented_items
+                'rented_items' => $rented_items,
+                'rent_requests' => $rent_requests
             ]);
         }
 
         if (auth()->user()->hasRole('Admin')) {
 
-            $users_counts = User::count();
+            $renter_count = User::where('role', '7')->count();
+            $rentee_count = User::where('role', '8')->count();
             $product_counts = Product::count();
             $rented_items_count = RentedItem::where('status', 'rented')->count();
             $rent_requests_count = RentedItem::where('status', 'requested')->count();
@@ -65,18 +76,19 @@ class HomeController extends Controller
 
             $categories = ProductCategory::orderBy('name','ASC')->get();
 
-            $mostly_requested = Product::withCount(['rentedItem' => function ($query) {
-                $query->where('status', 'requested');
-            }])->orderBy('rented_item_count', "desc")->get();
+//            $mostly_requested = Product::withCount(['rentedItem' => function ($query) {
+//                $query->where('status', 'requested');
+//            }])->orderBy('rented_item_count', "desc")->get();
+
 
             return view("dashboard")->with([
-                'users_counts' => $users_counts,
+                'renter_count' => $renter_count,
+                'rentee_count' => $rentee_count,
                 'product_counts' => $product_counts,
                 'rented_items_count' => $rented_items_count,
                 'rent_requests_count' => $rent_requests_count,
                 'users_for_last_30_days' => $users_for_last_30_days,
-                'categories' => $categories,
-                'mostly_requested' => $mostly_requested
+                'categories' => $categories
             ]);
         }
 
@@ -93,6 +105,7 @@ class HomeController extends Controller
 //            'product_counts' => $product_counts,
 //            'mostly_requested' => $mostly_requested
 //        ]);
+
 
 
     }

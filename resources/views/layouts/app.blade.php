@@ -43,7 +43,10 @@
             </main>
 
 
-          @if(request()->route()->getName() !== 'product.edit' && request()->route()->getName() !== 'product.create' && request()->route()->getName() !== 'dashboard')
+          @if(request()->route()->getName() !== 'product.edit' &&
+                request()->route()->getName() !== 'product.create' &&
+                request()->route()->getName() !== 'dashboard' &&
+                request()->route()->getName() !== 'rent-requests')
             <script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}" defer/>
           @elseif(request()->route()->getName() === 'product.create')
 
@@ -58,6 +61,17 @@
 
 
         @stack('modals')
+
+            <script>
+                // Wait for the DOM to be fully loaded
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize the accordion
+                    var accordions = document.querySelectorAll('.accordion');
+                    accordions.forEach(function (accordion) {
+                        new bootstrap.Collapse(accordion);
+                    });
+                });
+            </script>
 
 
     </body>

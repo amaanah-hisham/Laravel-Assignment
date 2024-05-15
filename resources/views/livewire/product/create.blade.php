@@ -50,7 +50,7 @@
                                 <input class="form-control" type="file" id="formFile" wire:model.defer="image">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Enter Hourly Rate</label>
+                                <label for="">Enter Rate (LKR/Per Day)</label>
                                 <input type="text"  wire:model.defer="price" placeholder="Product Price" class="form-control">
                             </div>
 

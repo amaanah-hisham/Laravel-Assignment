@@ -33,6 +33,15 @@
                     {{ __('SubCategories') }}
                 </x-nav-link>
                 @endrole
+
+                @role('Renter')
+
+
+                <x-nav-link href="{{ route('product.index') }}" :active="request()->routeIs('product.index')">
+                    {{ __('Products') }}
+                </x-nav-link>
+
+                @endrole
             </ul>
 
             <!-- Right Side Of Navbar -->

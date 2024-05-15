@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RenterController;
 use App\Http\Controllers\RentedItemController;
+use App\Http\Controllers\RentRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductSubCategoryController;
@@ -11,6 +13,8 @@ use App\Livewire\Product\Create;
 use App\Livewire\Product\Update;
 use App\Livewire\ShopFilter;
 use App\Http\Controllers\ShopController;
+use App\Notifications\RentedItems\Approval as ApprovalNotification;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,14 +33,28 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
     Route::get('/products/{category}/{sub_category}/{slug}', [ProductController::class, 'view'])->name('product-details');
 
-    Route::middleware([
+Route::get('/shop', 'App\Http\Controllers\ShopController@index')->name('shop');
+
+Route::get('/about-us', function (Request $request) {
+    return view('about');
+})->name('about');
+
+
+
+Route::get('renter-registration', [RenterController::class, 'renterRegistrationForm'])->name('renter-registration')->middleware(["guest"]);
+Route::post('renter-registration', [RenterController::class, 'renterRegistration'])->name('renter-registration.post')->middleware(["guest"]);
+
+Route::middleware([
         'auth:sanctum',
         config('jetstream.auth_session'),
         'verified',
     ])->group(function () {
 
 
-Route::get('dashboard',[HomeController::class, 'viewDashboard'])->name('dashboard');
+    Route::get('dashboard',[HomeController::class, 'viewDashboard'])->name('dashboard');
+
+
+
 
 Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
 
@@ -54,7 +72,6 @@ Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
             Route::resource(
                 'user',
                 \App\Http\Controllers\UserController::class
-
             );
         });
 
@@ -68,6 +85,7 @@ Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
 
         Route::post('view-products/{slug}/delete', [ProductController::class, 'deleteProductByID'])->name('products.delete')->middleware(['role:Renter|Admin']);
 
+        Route::get('rent-requests/{productId}', [RentRequest::class, 'show'])->name('rent-requests');
 
     });
 

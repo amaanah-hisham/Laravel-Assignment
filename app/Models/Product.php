@@ -36,7 +36,7 @@ class Product extends Model
 //        return $this->belongsTo(rentedItem::class);
 //    }
 
-    public function rentedItem()
+    public function rentedItem(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(RentedItem::class, 'product_id', 'id');
     }
@@ -44,5 +44,8 @@ class Product extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+
+
 
 }

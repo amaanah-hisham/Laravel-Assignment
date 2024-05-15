@@ -166,9 +166,11 @@
                                     <li><a href="{{ route('shop') }}">Shop</a>
 
                                     </li>
-
+                                    @guest
                                     <li><a href="{{route('renter-registration')}}">Become a Renter </a></li>
+                                    @endguest
                                     <li><a href="contact.html">Contact</a></li>
+                                    @auth
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('profile.show') }}">Profile</a></li>
@@ -179,6 +181,7 @@
                                             <li><a href="#">Logout</a></li>
                                         </ul>
                                     </li>
+                                    @endauth
                                 </ul>
                             </nav>
                         </div>
