@@ -14,10 +14,14 @@
         <!-- Scripts -->
 {{--        @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
         <link rel="stylesheet" href="{{ asset('assets/css/vendors/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/assets/css/icons.min.css') }}">
 
 
         <!-- Styles -->
         @livewireStyles
+
+        @stack("styles")
     </head>
     <body class=" bg-light">
 
@@ -72,6 +76,8 @@
                     });
                 });
             </script>
+
+    @stack("scripts")
 
 
     </body>

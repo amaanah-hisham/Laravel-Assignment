@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $members_rentee = \App\Models\User::factory(20)->create();
 
         foreach ($members_rentee as $member_rentee) {
-            $member_rentee->assignRole('Renteee');
+            $member_rentee->assignRole('Rentee');
         }
 
         $admin_created = \App\Models\User::factory()->create([

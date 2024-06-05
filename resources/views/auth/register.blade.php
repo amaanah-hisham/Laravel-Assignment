@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <div class="d-flex justify-content-center align-items-center vh-100">
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -7,6 +8,9 @@
         <x-validation-errors class="mb-3" />
 
         <div class="card-body">
+            <div class="text-center mb-4">
+                <img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="Logo" class="img-fluid" style="max-width: 150px;">
+            </div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -24,6 +28,22 @@
                     <x-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
                                  :value="old('email')" required />
                     <x-input-error for="email"></x-input-error>
+                </div>
+
+                <div class="mb-3">
+                    <x-label value="{{ __('Address') }}" />
+
+                    <x-input class="{{ $errors->has('address') ? 'is-invalid' : '' }}" type="text" name="address"
+                             :value="old('address')" required />
+                    <x-input-error for="address"></x-input-error>
+                </div>
+
+                <div class="mb-3">
+                    <x-label value="{{ __('Mobile') }}" />
+
+                    <x-input class="{{ $errors->has('mobile') ? 'is-invalid' : '' }}" type="text" name="mobile"
+                             :value="old('mobile')" required />
+                    <x-input-error for="mobile"></x-input-error>
                 </div>
 
                 <div class="mb-3">
@@ -67,5 +87,7 @@
                 </div>
             </form>
         </div>
+
     </x-authentication-card>
+    </div>
 </x-guest-layout>

@@ -45,7 +45,7 @@ class RentedSuccess extends Notification
             'days_count' => array_key_exists("days_count",$this->rented_item->rented_metadata) ? $this->rented_item->rented_metadata['days_count'] : 1,
             'amount' => array_key_exists("amount",$this->rented_item->rented_metadata) ? $this->rented_item->rented_metadata['amount'] : 1,
             'url' => $url,
-        ])->subject("Your product {$this->rented_item->product->title} has been requested for rent");
+        ])->subject("You have requested to rent {$this->rented_item->product->title}");
 
     }
 

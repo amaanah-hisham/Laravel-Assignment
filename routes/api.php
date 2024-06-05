@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
@@ -23,3 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login', [LoginController::class, 'login'])->name('api.login');
 Route::get('products', [ProductController::class, 'getProducts'])->name('api.show-renter-products')->middleware(['auth:sanctum', 'role:Renter']);
+Route::get('productsl', [ProductController::class, 'getProductsl'])->name('api.show-renter-productsl');
+
+Route::get('get-users',[UserController::class, 'getUsers'])->name('api.get-users')->middleware(['auth:sanctum', 'role:Admin']);

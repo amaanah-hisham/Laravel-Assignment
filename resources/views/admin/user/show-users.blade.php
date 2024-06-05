@@ -20,6 +20,14 @@
                             <td>{{ $user->email }}</td>
                         </tr>
                         <tr>
+                            <th>Phone:</th>
+                            <td>{{ $user->mobile }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>{{ $user->address }}</td>
+                        </tr>
+                        <tr>
                             <th>Rent Requests:</th>
                             <td>{{ $user->rentedItemsAsRentee->count() }}</td>
                         </tr>

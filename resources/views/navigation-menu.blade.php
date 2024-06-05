@@ -10,7 +10,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto" style="margin-left: 20px;">
                 <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-nav-link>
@@ -125,7 +125,7 @@
 
                             <!-- Authentication -->
                             <x-dropdown-link href="{{ route('logout') }}"
-                                                 onclick="event.preventDefault();
+                                             onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                 {{ __('Log out') }}
                             </x-dropdown-link>
@@ -137,5 +137,5 @@
                 @endauth
             </ul>
         </div>
-    </div>
+        </div>
 </nav>

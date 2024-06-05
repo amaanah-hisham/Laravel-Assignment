@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\RentedItem;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Enums\Role;
+
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -34,7 +35,7 @@ class UserController extends Controller
     {
         return view('admin.user.form', [
             'user' => (new User()),
-            'roles' => Role::cases()
+            'roles' => Role::all()->pluck('name')
         ]);
     }
 
@@ -46,12 +47,15 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
+            'address' => 'required',
+            'mobile' => 'required',
             'role' => 'required'
         ]);
 
         $validated['password'] = bcrypt('password');
 
-        User::create($validated);
+        $user = User::create($validated);
+        $user->assignRole($request->role);
 
         return redirect()->route('user.index')->with('success', 'User successfully created!');
     }
@@ -68,7 +72,7 @@ class UserController extends Controller
     {
         return view('admin.user.form', [
             'user' => $user,
-            'roles' => Role::cases()
+            'roles' => Role::all()->pluck('name')
         ]);
     }
 
@@ -80,10 +84,13 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id,
+            'address' => 'required',
+            'mobile' => 'required',
             'role' => 'required'
         ]);
 
         $user->update($validated);
+        $user->syncRoles($request->role);
 
         return redirect()->route('user.index')->with('success', 'User successfully updated!');
 

@@ -41,7 +41,7 @@ class Approval extends Notification
     public function toMail(object $notifiable): MailMessage
     {
 
-        if ($this->status == "rented") {
+        if ($this->status == "approved") {
             // rented status
 
             $url = url()->to("dashboard");
@@ -49,7 +49,7 @@ class Approval extends Notification
             return (new MailMessage)->markdown('mail.rented-items.approval',[
                 'rented_item' => $this->rentee_request,
                 'url' => $url,
-                "status" => "rented"
+                "status" => "approved"
             ])->subject('Rent Request was success');
 
         } else {

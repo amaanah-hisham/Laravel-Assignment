@@ -12,7 +12,7 @@
         </x-section-title>
     </div>
     <div class="col-md-8">
-        <div class="card shadow-sm" style="background: linear-gradient(1turn, #f1f6fd 30%, #edf1f7);">
+        <div class="card shadow-sm">
             <form wire:submit.prevent="{{ $submit }}">
                 <div class="card-body">
                     {{ $form }}

@@ -47,6 +47,14 @@
                                             <div class="form-group">
                                                 <input type="text"  name="email" placeholder="Email">
                                             </div>
+
+                                            <div class="form-group">
+                                                <input type="text"  name="address" placeholder="Address">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text"  name="mobile" placeholder="Mobile">
+                                            </div>
                                             <div class="form-group">
                                                 <input type="password" name="password" placeholder="Password">
                                             </div>

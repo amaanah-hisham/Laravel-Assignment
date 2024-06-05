@@ -11,6 +11,9 @@
     |   Product Image                            | <a href="{{ route('dashboard') }}" target="_blank"><img src="{{ asset('storage/' . $rented_item->product->product_image) }}" alt="" style="height: 120px;"></a>  |
     |   Price                                    | LKR{{ $amount }} |
     |   Product Owner                            | {{ $rented_item->product->productOwner->name }} |
+    |   Mobile Number                            | {{ $rented_item->product->productOwner->mobile ?? 'N/A' }} |
+    |   Email                                    | {{ $rented_item->product->productOwner->email  ?? 'N/A'}} |
+
 </x-mail::table>
 
 <x-mail::table>

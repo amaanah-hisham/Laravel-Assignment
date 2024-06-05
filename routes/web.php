@@ -59,14 +59,21 @@ Route::middleware([
 Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
 
     Route::group(['middleware' => ['role:Admin']],function() {
+
+
+
         Route::get('product-sub-categories', [ProductTestSubCategoryController::class, 'showSubCategories'])->name('product-sub-categories-view');
         Route::get('product-sub-categories/create', [ProductTestSubCategoryController::class, 'viewSubCategoryForm'])->name('product-sub-categories.create');
         Route::post('product-sub-categories/create', [ProductTestSubCategoryController::class, 'storeSubCategory'])->name('product-sub-categories.store');
         Route::get('product-sub-categories/edit/{slug}', [ProductTestSubCategoryController::class, 'viewEditSubCategoryForm'])->name('product-sub-categories.edit');
+        Route::post('product-sub-categories/edit/{slug}', [ProductTestSubCategoryController::class, 'updateSubCategory'])->name('product-sub-categories.update');
 
-            Route::resource(
-                'product-category',
-                \App\Http\Controllers\ProductCategoryController::class
+        Route::delete('/product-sub-categories/{slug}', [ProductTestSubCategoryController::class, 'destroySubCategory'])->name('product-sub-categories.delete');
+
+
+        Route::resource(
+            'product-category',
+            \App\Http\Controllers\ProductCategoryController::class
             );
 
             Route::resource(
@@ -88,10 +95,6 @@ Route::group(['middleware' => ['role:Admin|Renter|Rentee']],function(){
         Route::get('rent-requests/{productId}', [RentRequest::class, 'show'])->name('rent-requests');
 
     });
-
-
-
-
 });
 
 

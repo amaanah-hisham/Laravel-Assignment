@@ -111,4 +111,14 @@ class ProductTestSubCategoryController extends Controller
         return redirect()->route('product-category.index')->with('success', 'Product Category successfully deleted!');
     }
 
+    public function destroySubCategory($slug)
+    {
+        $subCategory = ProductSubCategory::where('slug', $slug)->firstOrFail();
+
+        $subCategory->delete();
+
+        return redirect()->route('product-sub-categories-view')->with('success', 'Product Sub Category successfully deleted!');
+    }
+
+
 }

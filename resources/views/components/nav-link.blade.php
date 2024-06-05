@@ -7,7 +7,7 @@
 @endphp
 
 <li class="nav-item">
-    <a {{ $attributes->merge(['class' => $classes]) }}>
-        {{ $slot }}
+    <a {{ $attributes->merge(['class' => $classes]) }} class="text-muted" style="font-size: 12px; font-weight: 500; ">
+        {{ strtoupper($slot) }}
     </a>
 </li>

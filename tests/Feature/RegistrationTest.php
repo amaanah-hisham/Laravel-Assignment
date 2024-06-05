@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Providers\RouteServiceProvider;
+use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Fortify\Features;
 use Laravel\Jetstream\Jetstream;
@@ -46,9 +47,13 @@ class RegistrationTest extends TestCase
             return;
         }
 
+        $this->seed(DatabaseSeeder::class);
+
         $response = $this->post('/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'mobile' => '0776523256',
+            'address' => "No 32, Colombo Road, Colombo 07",
             'password' => 'password',
             'password_confirmation' => 'password',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),

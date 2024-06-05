@@ -25,6 +25,13 @@
         gtag('config', 'G-V1B1F34JZ6');
     </script>
 
+    <style>
+        .dropdown-item:focus, .dropdown-item:hover {
+            color: #1e2125;
+            background-color: unset;
+            opacity: 0.8;
+        }
+    </style>
 
 @stack('styles')
 <!-- Styles -->
@@ -169,16 +176,24 @@
                                     @guest
                                     <li><a href="{{route('renter-registration')}}">Become a Renter </a></li>
                                     @endguest
-                                    <li><a href="contact.html">Contact</a></li>
+
                                     @auth
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('profile.show') }}">Profile</a></li>
                                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                            @role('Admin'|'Renter')
                                             <li><a href="{{ route('product.index') }}">Products</a></li>
 
-
-                                            <li><a href="#">Logout</a></li>
+                                            @endrole
+                                            <li>
+                                                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
                                         </ul>
                                     </li>
                                     @endauth
@@ -424,23 +439,33 @@
                     <div class="col-lg-2 col-md-3">
                         <h5 class="widget-title wow fadeIn animated">About</h5>
                         <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="/">Home </a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="{{ route('shop') }}">Shop</a>
+
                         </ul>
                     </div>
+                    @auth
                     <div class="col-lg-2  col-md-3">
                         <h5 class="widget-title wow fadeIn animated">My Account</h5>
                         <ul class="footer-list wow fadeIn animated">
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="#">View Cart</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Track My Order</a></li>
-                            <li><a href="#">Order</a></li>
+                            <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+
+                            @role('Admin'|'Renter')
+                            <li><a href="{{ route('product.index') }}">Products</a></li>
+                            @endrole
+                            <li>
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
                         </ul>
                     </div>
+                    @endauth
                     <div class="col-lg-4 mob-center">
                         <h5 class="widget-title wow fadeIn animated">Install App</h5>
                         <div class="row">

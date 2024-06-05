@@ -3,6 +3,14 @@
         <div class="row">
             <div class="col-lg-6">
 
+                <div>
+
+                    <img src="{{ asset('assets/imgs/slider/admin.png') }}" class="w-80 h-80 rounded-full mx-auto mb-4">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+
                 <div class="card">
                     <div class="card-body">
                         <h3 class="mb-3">Create Products</h3>
@@ -55,10 +63,10 @@
                             </div>
 
                             <div class="alert alert-info text-primary">
-                                Please enter the method of payment in your description (Advance payment details etc)
+                                Please enter the following information in the description:
                                 <ul>
-                                    <li>Transport details should be mentioned</li>
-                                    <li>Transport details should be mentioned</li>
+                                    <li>Advance payment details</li>
+                                    <li>Transport details</li>
                                 </ul>
                             </div>
 
@@ -69,7 +77,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-dark" >Create Product</button>
+                                <button type="submit" class="btn btn-primary" >Create Product</button>
                             </div>
                         </form>
                     </div>

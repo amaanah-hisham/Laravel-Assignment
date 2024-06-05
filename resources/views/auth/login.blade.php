@@ -1,11 +1,14 @@
 <x-guest-layout>
+    <div class="d-flex justify-content-center align-items-center vh-100">
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
 
         <div class="card-body">
-
+            <div class="text-center mb-4">
+                <img src="{{ asset('assets/imgs/logo/logo2.png') }}" alt="Logo" class="img-fluid" style="max-width: 150px;">
+            </div>
             <x-validation-errors class="mb-3 rounded-0" />
 
             @if (session('status'))
@@ -56,5 +59,7 @@
                 </div>
             </form>
         </div>
+
     </x-authentication-card>
+    </div>
 </x-guest-layout>

@@ -1,22 +1,38 @@
 <x-app-layout>
 
-    <div class="container-fluid">
-        <h1 > Manage Products</h1>
-        <a href="{{ route('product.create') }}"
-           class="btn btn-dark">
-            Create Product
-        </a>
+    <div class="container mt-1">
+        <div class="p-4 bg-white pt-4">
 
-        <table class="table table-responsive ">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h1 class="h5 fw-semibold text-gray-900 mb-0">Manage Products</h1>
+                </div>
+                <div class="mt-4 mt-sm-0">
+                    <a href="{{ route('product.create') }}" class="btn me-2 rounded text-white" style="background-color: #052f8c;">Create Product</a>
+                </div>
+            </div>
+
+
+            <div class="mt-4">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+
             <thead>
-            <th>ID</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Slug</th>
-            <th>Category</th>
-            <th>Sub Category</th>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Category</th>
+            <th scope="col">Sub Category</th>
 @role('Admin')
             <th>Posted By</th>
             @endrole
@@ -48,13 +64,13 @@
                     <td>
                         <div class="btn-group">
                             <a href="{{ route('products.view-by-slug', ['slug' => $product->slug]) }}"
-                               class="btn btn-info me-2 rounded">Show</a>
+                               class="btn me-2 rounded" style="background-color: #bde3fc;">Show</a>
                             <a href="{{ route('product.edit', ['slug' => $product->slug]) }}"
-                               class="btn btn-primary me-2 rounded">Edit</a>
+                               class="btn me-2 rounded" style="background-color: #bde3fc;">Edit</a>
                             <form action="{{ route('product.edit', ['slug' => $product->slug]) }}"
                                   method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn me-2 rounded" style="background-color: #bde3fc;">Delete</button>
                             </form>
                         </div>
                     </td>
@@ -66,6 +82,9 @@
             @endforelse
             </tbody>
         </table>
+                </div>
+            </div>
 
+    </div>
     </div>
 </x-app-layout>

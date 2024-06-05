@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Http\Controllers\ProductTestSubCategoryController;
+use App\Models\Product;
+use App\Models\ProductSubCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +17,16 @@ class ProductSubCategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    protected $model = Product::class;
+
+    public function definition()
     {
         return [
-            //
+            'category_id' => ProductSubCategory::factory(), // Create a subcategory if none exists
+            'name' => $this->faker->word,
+            'slug' => $this->faker->slug,
+            'description' => $this->faker->paragraph,
+            'status' => 'available', // or any default status
         ];
     }
 }

@@ -22,6 +22,8 @@ class RenterController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
+            'address' => 'required|string|max:255',
+            'mobile' => 'required|string|max:20',
             'password' => 'required|string|min:8|confirmed',
             'checkbox' => 'required|string',
         ]);
@@ -34,6 +36,6 @@ class RenterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('product.create')->with('success', 'You Renter account has been successfully created!');
+        return redirect()->route('dashboard')->with('success', 'You Renter account has been successfully created!');
     }
 }

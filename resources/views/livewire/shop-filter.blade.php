@@ -64,7 +64,7 @@
                                         <div class="product-img-action-wrap h-100">
                                             <div class="product-img product-img-zoom">
                                                 <a
-                                                    href="{{ route('product-details', ['category' => $product->productCategory->slug, 'sub_category' => $product->productSubCategory->name ,'slug' => $product->slug]) }}">
+                                                    href="{{ route('product-details', ['category' => $product->productCategory->slug, 'sub_category' => $product->productSubCategory->slug ,'slug' => $product->slug]) }}">
                                                     <img class="default-img img-fluid" src="{{ asset('storage/' . $product->product_image) }}" alt="">
                                                 </a> <!--to set the url parameters-->
 

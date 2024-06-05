@@ -4,6 +4,17 @@
             <div class="row">
                 <div class="col-lg-6">
 
+                    <div>
+
+                        <img src="{{ asset('assets/imgs/slider/admin.png') }}" class="w-80 h-80 rounded-full mx-auto mb-4">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center justify-content-center">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3">Edit Sub Category</h3>
@@ -25,8 +36,7 @@
 
                             @endif
 
-                            <form method="post" action="{{route('product-sub-categories.store')}}">
-
+                            <form method="post" action="{{ route('product-sub-categories.update', ['slug' => $subCategory->slug]) }}">
                                 @csrf
 
                                 <div class="form-group mb-3">
@@ -50,9 +60,11 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <button type="submit" class="btn btn-dark" name="login">Update Sub Category</button>
+                                    <button type="submit" class="btn btn-primary" name="login">Update Sub Category</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
                         </div>
                     </div>
 

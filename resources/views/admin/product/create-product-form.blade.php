@@ -4,6 +4,14 @@
         <div class="row">
             <div class="col-lg-6">
 
+                <div>
+
+                    <img src="{{ asset('assets/imgs/slider/admin.png') }}" class="w-80 h-80 rounded-full mx-auto mb-4">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+
                 <div class="card">
                     <div class="card-body">
                         <h3 class="mb-3">Create Products</h3>

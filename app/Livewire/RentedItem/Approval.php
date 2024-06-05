@@ -31,9 +31,9 @@ class Approval extends Component
     {
         // 1. Update rent request form validation rules if needed
 
-        // 2. Change the status of the rented item record to "rented"
+        // 2. Change the status of the rented item record to "approved"
         $this->rented_request->update([
-            'status' => 'rented'
+            'status' => 'approved'
         ]);
 
         // 3. Notify the requested rentee that the product request is approved
@@ -60,6 +60,25 @@ class Approval extends Component
 
         //success message
         session()->flash('message', 'Rent request approved successfully!');
+        return redirect()->route('dashboard');
+    }
+
+    public function reject()
+    {
+
+        // 1. Change the status of the rented item record to "rejected"
+        $this->rented_request->update([
+            'status' => 'rejected'
+        ]);
+
+        // 2. Notify the requested rentee that the product request is approved
+        $rented_request_id = $this->rented_request->id;
+        $user = $this->rented_request->user;
+        $user->notify(new ApprovalNotification($rented_request_id, "rejected"));
+
+
+        //success message
+        session()->flash('message', 'Rent request Rejected successfully!');
         return redirect()->route('dashboard');
     }
 

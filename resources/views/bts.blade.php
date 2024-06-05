@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>ANNYEONG</h2>
+    <h2></h2>
 </body>
 </html>

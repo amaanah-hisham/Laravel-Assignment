@@ -53,15 +53,30 @@ class RentItem extends Component
         ]);
 
 
+//        $already_rented_check = RentedItem::where('product_id', $this->product->id)
+//            ->where('status', 'rented')
+//            ->where('returning_date', '>=', Carbon::parse($this->returning_date))
+//            ->where('renting_date', '<=', Carbon::parse($this->borrowing_date))
+//            ->exists();
+
+
+
         $already_rented_check = RentedItem::where('product_id', $this->product->id)
-            ->where('status', 'rented')
-            ->where('returning_date', '>=', $this->borrowing_date)
-            ->where('borrowing_date', '<=', $this->returning_date)
+            ->whereIn('status', ['approved'])
+           ->where(function($query) {
+                    $query->whereDate('renting_date', "<=", Carbon::parse($this->borrowing_date)->toDate())
+                    ->whereDate('returning_date', ">=", Carbon::parse($this->returning_date)->toDate());
+            })
+            ->orWhere(function($query) {
+                    $query->whereDate('renting_date', "<=", Carbon::parse($this->borrowing_date)->toDate())
+                    ->whereDate('returning_date', ">=", Carbon::parse($this->returning_date)->toDate());
+            })
             ->exists();
+
 
         if ($already_rented_check) {
             $this->addError('borrowing_date_error', 'This product is already rented for the selected dates.');
-
+            return false;
         }
 
         $rented_metadata = [
@@ -72,7 +87,7 @@ class RentItem extends Component
         ];
 
 
-        // Statuses: requested, advance-paid, rented, returned, cancelled
+        // Statuses: requested, approved, rented, completed, rejected
 
         $rented_item = RentedItem::create([
             'renter_id' => $this->product->user_id,

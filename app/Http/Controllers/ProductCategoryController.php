@@ -69,7 +69,7 @@ class ProductCategoryController extends Controller
     {
         $productCategory->delete();
 
-       
+
 
         return redirect()->route('product-category.index')->with('success', 'Product Category successfully deleted!');
     }
