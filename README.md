@@ -62,4 +62,4 @@ E-WAVE aims to become the leading platform for budget-friendly electronic item r
   - **Event Planners:** Professionals needing specific electronic equipment for occasions.
   - **Small Businesses and Startups:** Companies requiring electronics for short-term projects or experiments.
 
-Thank you for choosing E-WAVE. We are committed to providing a seamless and efficient rental experience for all our users. For any queries or support, please contact us at [support@ewave.com](mailto:support@ewave.com).
+Thank you for choosing E-WAVE. We are committed to providing a seamless and efficient rental experience for all our users.
